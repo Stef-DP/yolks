@@ -62,6 +62,9 @@ RUN apt update \
 RUN pip3.11 install --upgrade pip \
     && pip3.12 install --upgrade pip
 
+# Install UV
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # OpenJDK 21 LTS
 RUN apt update \
     && apt install -y libc6-i386 libc6-x32 \
