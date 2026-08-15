@@ -63,6 +63,7 @@ RUN pip3.11 install --upgrade pip \
     && pip3.12 install --upgrade pip
 
 # Install UV
+ENV UV_INSTALL_DIR="/usr/local/bin"
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # OpenJDK 21 LTS
