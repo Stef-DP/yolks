@@ -88,7 +88,8 @@ RUN apt update \
     && apt install -y libc6-i386 libc6-x32 \
     && wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb -O jdk-21_linux-x64_bin.deb \
     && apt install -y ./jdk-21_linux-x64_bin.deb \
-    && rm jdk-21_linux-x64_bin.deb
+    && rm jdk-21_linux-x64_bin.deb \
+    && ln -s /usr/lib/jvm/jdk-21*-oracle-x64 /usr/lib/jvm/jdk-21
 
 ENV JAVA_HOME=/usr/lib/jvm/jdk-21/
 ENV PATH=$PATH:$JAVA_HOME/bin
